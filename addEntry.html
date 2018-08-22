@@ -1,0 +1,55 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+  <head>
+    <title> Add Entry to my Own Blog! </title>
+    <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+    <style>
+      td.content{
+        vertical-align: top;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id = "general">
+      <h2>Add Entry to my Own Blog!</h2>
+
+      <p>Instructions: Enter a title and body for your blog entry. In the body, you can use simple html formatting element, such as &ltb&gt (bold) and &lti&gt (italic) as well as the hyperlink "anchor" element &lta&gt.</p>
+
+      <form action="addEntry.php" method = "POST" id = "newEntryForm">
+        <table>
+          <tr>
+            <td><label>Title:</label></td>
+            <td><input type = "text" name = "title" size = "50"/></td>
+          </tr>
+
+          <tr>
+            <td class = "content"><label>Body:</label></td>
+            <td><textarea rows="10" cols="75" name = "content"></textarea></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type = "submit" value = "Add Entry"/>
+
+              <input type = "button" onclick = "clearForm()" value = "Clear";>
+            </td>
+          </tr>
+        </table>
+      </form>
+
+      <script>
+        function clearForm(){
+          if(confirm("Clear the form?")){
+            document.getElementById("newEntryForm").reset();
+          }
+        }
+
+      </script>
+
+    </div>
+  </body>
+</html>
